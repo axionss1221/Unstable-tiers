@@ -1,0 +1,8 @@
+{
+  "name": "sapvp-community",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"dev":"next dev","build":"prisma generate && next build","start":"next start","db:push":"prisma db push","db:seed":"tsx prisma/seed.ts"},
+  "dependencies": {"@prisma/client":"^6.16.2","next":"^15.5.4","react":"^19.1.0","react-dom":"^19.1.0"},
+  "devDependencies": {"@types/node":"^22.15.30","@types/react":"^19.1.2","@types/react-dom":"^19.1.2","prisma":"^6.16.2","tsx":"^4.19.4","typescript":"^5.8.3"}
+}

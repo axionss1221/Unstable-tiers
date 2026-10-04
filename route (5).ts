@@ -1,0 +1,2 @@
+import {NextResponse} from 'next/server';import {makeSession,name} from '../../../../lib/auth';
+export async function POST(req:Request){const {username,password}=await req.json();if(username!==process.env.ADMIN_USERNAME||password!==process.env.ADMIN_PASSWORD)return NextResponse.json({error:'Credenciais inválidas'},{status:401});const r=NextResponse.json({ok:true});r.cookies.set(name,makeSession(),{httpOnly:true,secure:process.env.NODE_ENV==='production',sameSite:'lax',path:'/',maxAge:60*60*24*7});return r}
